@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIIdeLab-BankATM</title>
+</head>
+<body>
+    <script>
+        
+        alert(`Welcome Customer, please insert your card and wait for further instructions`)
+        
+        let Pin = "1234"
+        let pin = parseInt(prompt("Enter Pin"))
+         if(pin != Pin){
+            alert("The pin you entered is Incorrect!")
+        }else{
+            let Option = parseInt(prompt(`Select an option to execute:
+            1. Withdrawal       2. Bank Payment
+            3. Change Pin       4. Transfer
+            5. Balance          6. Airtime`));
+        let balanceAmt = 50000
+
+            // here Transaction choice 1 to Withdrawal
+
+            if(Option === 1){
+                let amount = parseInt(prompt("Enter amount"));
+                alert("Please wait, your request is processing")
+                if (amount <= balanceAmt) {
+                    // they have enough money, do as you've already done for withdrawal
+                    alert(`Transaction Successful.`)
+                    } else {
+                    // they don't have enough money. reject them
+                    alert("No enough fund to this transaction")
+                   }
+                
+                     // here Transaction choice is 2 to Transfer
+            } else if(Option === 2){
+
+            let bankOption = parseInt(prompt(`Select bank choice:
+            1. Diamond bank
+            2. UBA
+            3. First Bank
+            4. GTB
+            `));
+                if(bankOption === 1 || bankOption === 2 || bankOption === 3 || bankOption === 4){
+                let acctNumber = parseInt(prompt("please Enter your account number"))
+                transferAmt = parseInt(prompt(`Select amount to deposit :
+                1. #1000
+                2. #5,000
+                5. Others`));
+                if(transferAmt === 1 || transferAmt === 2 || transferAmt === 3 || transferAmt === 4){
+                            alert("Processing");
+                            alert("Congratulations! Transaction Successful")
+                        } else if(transferAmt === 5){
+                            parseInt(prompt("Enter Amount:"))
+                            alert("Transaction Processing...");
+                            alert("Congratulations! Transaction Successful")
+                            // alert("Your New account Balance is ")
+                        }
+                        else{
+                            alert("Please select a valid option");
+                        }
+                }
+                     // If TransactionOpt is 5 it means Others Balance
+        }else if(Option === 5){
+            let accountBalance = "#" + balanceAmt;
+            alert(`Your New Account Balance is ${accountBalance}`)
+        } 
+        
+                //option 6 airtime
+        else if(Option === 6){
+                airtime = prompt(`Kindly select an option:
+                1. Self 
+                2. Third party`)
+            
+                if(airtime == "1"){
+                airtimeAmt = +prompt(`Enter Amount:`)
+                let network = parseInt(prompt(`Please select Network
+                                1. MTN
+                                2. Airtel
+                                3. Glo
+                                4. 9Mobile`))
+                alert(`You are about to Purchase airtime of ${airtimeAmt} for self`)
+
+                let pin = parseInt(prompt("Enter Your Pin:"))
+                
+                alert(`You have successfully Purchased an airtime of ${airtimeAmt}`)
+            } else if(airtime == "2"){
+                let network = parseInt(prompt(`Please select Network
+                                1. MTN
+                                2. Airtel
+                                3. Glo
+                                4. 9Mobile`))
+                phoneNum = parseInt(prompt("Enter Phone Number:"))
+                airtimeAmt = parseInt(prompt(`Enter Amount:`))
+                alert(`You are about to Purchase an airtime of ${airtimeAmt} for ${phoneNum}`);
+               
+                prompt(`Press OK to proceed`); 
+                parseInt(prompt(`Enter Pin:`))
+                alert(`You have successfully purchased an airtime of ${airtimeAmt} for ${phoneNum} .`)
+            } 
+        }
+        
+        else{
+            alert("Please select the right option")
+        }
+  
+        }
+         </script>
+</body>
+</html>
+  
